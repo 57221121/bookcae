@@ -1,58 +1,44 @@
 <?php
+// +----------------------------------------------------------------------
+// | ThinkPHP [ WE CAN DO IT JUST THINK ]
+// +----------------------------------------------------------------------
+// | Copyright (c) 2006-2014 http://thinkphp.cn All rights reserved.
+// +----------------------------------------------------------------------
+// | Licensed ( http://www.apache.org/licenses/LICENSE-2.0 )
+// +----------------------------------------------------------------------
+// | Author: liu21st <liu21st@gmail.com>
+// +----------------------------------------------------------------------
 
-/**
- * Laravel - A PHP Framework For Web Artisans
- *
- * @package  Laravel
- * @author   Taylor Otwell <taylorotwell@gmail.com>
- */
+// 应用入口文件
+// 检测是否是新安装
+if(file_exists("./Public/install") && !file_exists("./Public/install/install.lock")){
+    // 组装安装url
+    $url=$_SERVER['HTTP_HOST'].trim($_SERVER['SCRIPT_NAME'],'index.php').'Public/install/index.php';
+    // 使用http://域名方式访问；避免./Public/install 路径方式的兼容性和其他出错问题
+    header("Location:http://$url");
+    die;
+}
+// 检测PHP环境
+if(version_compare(PHP_VERSION,'5.3.0','<'))  die('require PHP > 5.3.0 !');
 
-/*
-|--------------------------------------------------------------------------
-| Register The Auto Loader
-|--------------------------------------------------------------------------
-|
-| Composer provides a convenient, automatically generated class loader for
-| our application. We just need to utilize it! We'll simply require it
-| into the script here so that we don't have to worry about manual
-| loading any of our classes later on. It feels nice to relax.
-|
-*/
+// 开启调试模式 建议开发阶段开启 部署阶段注释或者设为false
+define('APP_DEBUG',true);
 
-require __DIR__.'/local/bootstrap/autoload.php';
+// 定义应用目录
+define('APP_PATH','./Application/');
 
-/*
-|--------------------------------------------------------------------------
-| Turn On The Lights
-|--------------------------------------------------------------------------
-|
-| We need to illuminate PHP development, so let us turn on the lights.
-| This bootstraps the framework and gets it ready for use, then it
-| will load up this application so that we can run it and send
-| the responses back to the browser and delight our users.
-|
-*/
+// 定义缓存目录
+define('RUNTIME_PATH','./Runtime/');
 
-$app = require_once __DIR__.'/local/bootstrap/app.php';
+// 定义模板文件默认目录
+define("TMPL_PATH","./tpl/");
 
-/*
-|--------------------------------------------------------------------------
-| Run The Application
-|--------------------------------------------------------------------------
-|
-| Once we have the application, we can handle the incoming request
-| through the kernel, and send the associated response back to
-| the client's browser allowing them to enjoy the creative
-| and wonderful application we have prepared for them.
-|
-*/
+// 定义oss的url
+define("OSS_URL","");
 
-$kernel = $app->make(Illuminate\Contracts\Http\Kernel::class);
+// 引入ThinkPHP入口文件
+require './ThinkPHP/ThinkPHP.php';
 
-$response = $kernel->handle(
-    $request = Illuminate\Http\Request::capture()
-);
+// 亲^_^ 后面不需要任何代码了 就是如此简单
 
-$response->send();
 
-$kernel->terminate($request, $response);
