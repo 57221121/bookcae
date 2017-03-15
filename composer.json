@@ -1,14 +1,14 @@
 {
-    "name": "bjy/bjyadmin",
-    "description": "the bjyadmin",
+    "name": "bookcae",
+    "description": "the bookcae",
     "type": "framework",
-    "keywords": ["framework","bjyadmin","ORM"],
-    "homepage": "http://www.baijunyao.com",
+    "keywords": ["framework","bookcae","ORM"],
+    "homepage": "http://www.bookcae.com",
     "license": "Apache2",
     "authors": [
         {
-            "name": "baijunyao",
-            "email": "baijunyao@baijunyao.com"
+            "name": "bookcae",
+            "email": "bookcae@bookcae.com"
         }
     ],
     "require": {

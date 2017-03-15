@@ -54,7 +54,7 @@ class Umeng {
 			// Set your device tokens here
 			$unicast->setPredefinedKeyValue("device_tokens",    $device_tokens); 
 			$unicast->setPredefinedKeyValue("ticker",           "$title");
-			$unicast->setPredefinedKeyValue("title",            "bjyadmin");
+			$unicast->setPredefinedKeyValue("title",            "bookcae");
 			$unicast->setPredefinedKeyValue("text",             "$title");
 			$unicast->setPredefinedKeyValue("after_open",       "go_custom");
 			$unicast->setPredefinedKeyValue("custom",         " 自定义内容 ");

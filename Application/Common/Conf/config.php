@@ -31,7 +31,7 @@ return array(
     'URL_MODEL'              => 1,  //启用rewrite
 //***********************************SESSION设置**********************************
     'SESSION_OPTIONS'        => array(
-        'name'               => 'BJYADMIN',//设置session名
+        'name'               => 'bookcae',//设置session名
         'expire'             => 24*3600*15, //SESSION保存15天
         'use_trans_sid'      => 1,//跨页传递
         'use_only_cookies'   => 0,//是否只开启基于cookies的session的会话方式
@@ -92,9 +92,9 @@ return array(
         'input_charset'      => 'utf-8', // 编码 (固定值不用改)
         'transport'          => 'http', // 协议  (固定值不用改)
         'cacert'             => VENDOR_PATH.'Alipay/cacert.pem',  // cacert.pem存放的位置 (固定值不用改)
-        'notify_url'         => 'http://baijunyao.com/Api/Alipay/alipay_notify', // 异步接收支付状态通知的链接
-        'return_url'         => 'http://baijunyao.com/Api/Alipay/alipay_return', // 页面跳转 同步通知 页面路径 支付宝处理完请求后,当前页面自 动跳转到商户网站里指定页面的 http 路径。 (扫码支付专用)
-        'show_url'           => 'http://baijunyao.com/User/Order/index', // 商品展示网址,收银台页面上,商品展示的超链接。 (扫码支付专用)
+        'notify_url'         => 'http://bookcae.com/Api/Alipay/alipay_notify', // 异步接收支付状态通知的链接
+        'return_url'         => 'http://bookcae.com/Api/Alipay/alipay_return', // 页面跳转 同步通知 页面路径 支付宝处理完请求后,当前页面自 动跳转到商户网站里指定页面的 http 路径。 (扫码支付专用)
+        'show_url'           => 'http://bookcae.com/User/Order/index', // 商品展示网址,收银台页面上,商品展示的超链接。 (扫码支付专用)
         'private_key_path'   => '', //移动端生成的私有key文件存放于服务器的 绝对路径 如果为MD5加密方式；此项可为空 (移动支付专用)
         'public_key_path'    => '', //移动端生成的公共key文件存放于服务器的 绝对路径 如果为MD5加密方式；此项可为空 (移动支付专用)
         ),
@@ -103,6 +103,6 @@ return array(
         'MCHID'              => '', // 微信支付MCHID 商户收款账号
         'KEY'                => '', // 微信支付KEY
         'APPSECRET'          => '',  //公众帐号secert
-        'NOTIFY_URL'         => 'http://baijunyao.com/Api/WeixPay/notify/order_number/', // 接收支付状态的连接
+        'NOTIFY_URL'         => 'http://bookcae.com/Api/WeixPay/notify/order_number/', // 接收支付状态的连接
         ),
 );
